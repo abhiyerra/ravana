@@ -6,7 +6,7 @@ class CreateTorrents < ActiveRecord::Migration
 
       t.text :description
 
-      t.string :hash_info
+      t.string :info_hash
 
       t.timestamps
     end

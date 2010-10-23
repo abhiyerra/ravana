@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20101023073500) do
     t.float    "downloaded"
     t.float    "left"
     t.string   "ip"
+    t.string   "event"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20101023073500) do
     t.string   "name"
     t.string   "filename"
     t.text     "description"
-    t.string   "hash_info"
+    t.string   "info_hash"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"

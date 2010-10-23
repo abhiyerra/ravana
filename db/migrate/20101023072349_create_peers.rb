@@ -12,6 +12,7 @@ class CreatePeers < ActiveRecord::Migration
       t.float :left
 
       t.string :ip
+      t.string :event
 
       t.timestamps
     end

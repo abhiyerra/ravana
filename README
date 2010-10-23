@@ -8,4 +8,20 @@ of torrent trackers acting through Oauth.
 "The death of one node is a tragedy, a death of a million a statistic."
 
 
+TODO
+  - torrents
+    - upload
+      - add tracker to file.
+      
+    - download
+
+  - tracker
+    - announce
+    - stats
+
+  - TrackerPeer
+    - api server
+      - oauth
+    - do a web hook.
+    - add peer
 

@@ -11,7 +11,15 @@ class TorrentsController < ApplicationController
 
   end
 
+  def create
+    # TODO Upload the torrent.
+    # TODO Modify the torrent and add local tracker
+    # TODO Add a queue to send webhook response to TrackerPeers.
+  end
+
   def destroy
+    # TODO Destroy the tracker on the local machine.
+    # TODO Send request to remote peer
 
   end
 

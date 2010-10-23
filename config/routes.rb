@@ -13,6 +13,7 @@ Tradings::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+  match 'upload' => 'torrents#new'
   match 'announce' => 'tracker#announce'
 
   resources :torrents do
