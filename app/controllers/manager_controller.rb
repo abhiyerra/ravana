@@ -1,0 +1,2 @@
+class ManagerController < ApplicationController
+end

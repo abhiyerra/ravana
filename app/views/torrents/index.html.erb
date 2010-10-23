@@ -1,0 +1,23 @@
+<table border="0">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>SE</th>
+      <th>LE</th>
+      <th>Last Updated</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @torrents.each do |t| %>
+      <tr>
+        <td><%= link_to t.name, torrent_path(t) %></td>
+        <td><%= t.description %></td>
+        <td><%= t.total_downloaded %></td>
+        <td><%= t.total_leeched %></td>
+        <td><%= t.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

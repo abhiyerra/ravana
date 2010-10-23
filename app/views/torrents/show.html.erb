@@ -1,0 +1,17 @@
+<div class="torrent-header">
+  <h1><%= @torrent.name %></h1>
+
+  <%= link_to 'Download', :controller => 'torrents', :action => 'file', :id => @torrent %>
+
+  <div>
+    <%= @torrent.description %>
+  </div>
+</div>
+
+<div class="comments">
+  <div class="new-comment-box">
+  </div>
+
+  <div class="comment">
+  </div>
+</div>
