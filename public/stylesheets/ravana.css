@@ -1,0 +1,9 @@
+ul#main-menu {
+  list-style-type: none;
+  padding: 0; }
+  ul#main-menu li {
+    float: left;
+    margin-right: 1em; }
+    ul#main-menu li a {
+      color: red;
+      font-size: 120%; }

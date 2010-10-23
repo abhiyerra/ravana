@@ -16,6 +16,7 @@ Tradings::Application.routes.draw do
   match 'upload' => 'torrents#new'
   match 'announce' => 'tracker#announce'
 
+  resources :categories
   resources :torrents do
     member do
       get 'file'
@@ -57,7 +58,7 @@ Tradings::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "torrents#index"
+  root :to => "categories#index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+#
+
+%w{Audio Video Applications Games Other}.each do |cat_name|
+  Category.create :name => cat_name
+end

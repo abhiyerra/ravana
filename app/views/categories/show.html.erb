@@ -1,0 +1,13 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <% Torrent.where(:category_id => @category.id).each do |torrent| %>
+    <tr>
+      <td></td>
+    </tr>
+  <% end %>
+</table>
+
