@@ -14,15 +14,10 @@ Tradings::Application.routes.draw do
   #   resources :products
 
   match 'tracker-peer/new' => 'tracker_peer#new', :as => :new_tracker_peer
-  match 'upload' => 'torrents#new'
   match 'announce' => 'tracker#announce'
 
   resources :categories
-  resources :torrents do
-    member do
-      get 'file'
-    end
-  end
+  resources :torrents
 
   # Sample resource route with options:
   #   resources :products do

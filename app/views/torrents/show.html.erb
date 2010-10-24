@@ -1,7 +1,7 @@
 <div class="torrent-header">
   <h1><%= @torrent.name %></h1>
 
-  <%= link_to 'Download', :controller => 'torrents', :action => 'file', :id => @torrent %>
+  <%= link_to 'Download', @torrent.torrent.url %>
 
   <div>
     <%= @torrent.description %>
