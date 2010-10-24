@@ -1,7 +1,7 @@
-<h1>Categories</h1>
+<h2>Categories</h2>
 <% @categories.each do |category| %>
   <div class="span-24">
-    <h2><%= link_to category.name, category_url(category) %></h2>
+    <h3><%= link_to category.name, category_url(category) %></h3>
 
     <table>
       <thead>

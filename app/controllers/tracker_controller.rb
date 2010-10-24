@@ -5,11 +5,12 @@ class TrackerController < ApplicationController
     @torrent = Torrent.where(:info_hash => params[:info_hash]).first
     @peer = Peer.where(:peer_id => params[:peer_id], :torrent_id => @torrent.id)
 
-    if @peer.empty? || params[:event].eql? 'started'
+    if @peer.empty? || params[:event].eql?('started')
       @peer = Peer.create(:peer_id => params[:peer_id], :torrent_id => @torrent.id)
     end
 
-    if params[:ip]
+    @ip = params[:ip] if params[:ip]
+
     @numwant = params[:numwant] ? params[:numwant].to_i : NumWant
 
     render :text => 'hello google'
@@ -31,4 +32,9 @@ class TrackerController < ApplicationController
 #key: Optional. An additional identification that is not shared with any users. It is intended to allow a client to prove their identity should their IP address change.
 #trackerid: Optional. If a previous announce contained a tracker id, it should be set here.
 #  #
+  #
+
+  def new
+    
+  end
 end

@@ -15,16 +15,25 @@
   </head>
   <body>
     <div class="container">
-      <h1><%= link_to 'Ravana', root_url %></h1>
+      <div class="span-24 header">
+        <h1><%= link_to 'Ravana', root_url %></h1>
 
-      <div class="span-24">
-        <ul id="main-menu">
-          <li><%= link_to 'Categories', '' %></li>
+        <ul id="header-menu">
+          <li><%= link_to 'Categories', categories_url %></li>
           <li><%= link_to 'Search', '' %></li>
           <li><%= link_to 'Upload', new_torrent_url %></li>
         </ul>
       </div>
-      <%= yield %>
+
+      <div class="span-24">
+        <%= yield %>
+      </div>
+
+      <div class="span-24 footer">
+        <ul id="footer-menu">
+          <li><%= link_to 'TrackerPeer', new_tracker_peer_url %></li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

@@ -13,6 +13,7 @@ Tradings::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+  match 'tracker-peer/new' => 'tracker_peer#new', :as => :new_tracker_peer
   match 'upload' => 'torrents#new'
   match 'announce' => 'tracker#announce'
 
