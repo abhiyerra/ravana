@@ -1,5 +1,27 @@
-<%= form_for :torrent do |f| %>
+<%= form_for :torrent, :html => { :multipart => true } do |f| %>
   <p>
+    <%= f.label :name %>
+    <br>
     <%= f.text_field :name, :class => 'title' %>
   </p>
+
+  <p>
+    <%= f.label :category %>
+    <br>
+    <%= f.select :category_id, Category.all.map { |c| [c.name, c.id] }, :class => 'title' %>
+  </p>
+
+  <div class="span-24">
+    <%= f.label :description %>
+    <br>
+    <%= f.text_area :description %>
+  </div>
+
+  <p>
+    <%= f.label :file %>
+    <br>
+    <%= f.file_field :torrent %>
+  </p>
+
+  <%= submit_tag 'Upload' %>
 <% end %>
