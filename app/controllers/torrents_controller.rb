@@ -28,7 +28,6 @@ class TorrentsController < ApplicationController
 
   end
 
-  # TODO: Make this do a search based on MySQL/PostgreSQL/Sqlite
   def search
     @torrents = Torrent.search(params[:q])
   end
