@@ -28,7 +28,8 @@ class TorrentsController < ApplicationController
 
   end
 
-  def file
-    render :text => params[:id]
+  # TODO: Make this do a search based on MySQL/PostgreSQL/Sqlite
+  def search
+    @torrents = Torrent.search(params[:q])
   end
 end

@@ -39,6 +39,11 @@ class Torrent < ActiveRecord::Base
     end
   end
 
+  # TODO: Make this do a search based on MySQL/PostgreSQL/Sqlite
+  def self.search query
+    self.all
+  end
+
   def to_param
     "#{id}-#{name.gsub(/[^a-z0-9]+/i, '-')}"
   end

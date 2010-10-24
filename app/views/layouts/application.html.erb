@@ -18,9 +18,10 @@
       <div class="span-24 header">
         <h1><%= link_to 'Ravana', root_url %></h1>
 
+        <%= render :partial => "torrents/search_box" %>
+
         <ul id="header-menu">
           <li><%= link_to 'Categories', categories_url %></li>
-          <li><%= link_to 'Search', '' %></li>
           <li><%= link_to 'Upload', new_torrent_url %></li>
         </ul>
       </div>
