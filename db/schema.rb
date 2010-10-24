@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101023073500) do
+ActiveRecord::Schema.define(:version => 20101024001242) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(:version => 20101023073500) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
+  end
+
+  create_table "tracker_peers", :force => true do |t|
+    t.string   "domain"
+    t.string   "admin_email"
+    t.boolean  "is_allowed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
