@@ -1,13 +1,1 @@
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-    </tr>
-  </thead>
-  <% Torrent.where(:category_id => @category.id).each do |torrent| %>
-    <tr>
-      <td></td>
-    </tr>
-  <% end %>
-</table>
-
+<%= render :partial => "torrents/list", :locals => { :torrents => Torrent.where(:category_id => @category.id) } %>

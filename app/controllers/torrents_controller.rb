@@ -8,14 +8,15 @@ class TorrentsController < ApplicationController
   end
 
   def new
-
   end
 
   def create
     @torrent = Torrent.create(params[:torrent])
 
-    # TODO Upload the torrent.
+
     # TODO Modify the torrent and add local tracker
+    @torrent.add_tracker
+
     # TODO Add a queue to send webhook response to TrackerPeers.
 
     redirect_to :action => 'show', :id => @torrent.id

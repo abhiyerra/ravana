@@ -3,17 +3,6 @@
   <div class="span-24">
     <h3><%= link_to category.name, category_url(category) %></h3>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-        </tr>
-      </thead>
-      <% Torrent.where(:category_id => category.id).limit(10).each do |torrent| %>
-        <tr>
-          <td></td>
-        </tr>
-      <% end %>
-    </table>
+    <%= render :partial => "torrents/list", :locals => { :torrents => Torrent.where(:category_id => category.id).limit(10) } %>
   </div>
 <% end %>
