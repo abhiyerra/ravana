@@ -19,6 +19,14 @@
       <div class="span-24 header">
         <h1><%= link_to 'Ravana', root_url %></h1>
 
+        <div class="login-box">
+          <% if user_signed_in? %>
+            <%= current_user.email %>
+          <% else %>
+            <%= link_to 'Login', new_user_session_path %>
+            <%= link_to 'Register', new_user_registration_path %>
+          <% end %>
+        </div>
         <%= render :partial => "torrents/search_box" %>
 
         <ul id="header-menu">
