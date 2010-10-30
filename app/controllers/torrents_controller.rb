@@ -27,6 +27,10 @@ class TorrentsController < ApplicationController
 
   end
 
+  def latest
+    @torrents = Torrent.limit(10)
+  end
+
   def search
     @torrents = Torrent.search(params[:q])
   end
