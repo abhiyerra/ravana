@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20101024190319) do
   end
 
   create_table "users", :force => true do |t|
+    t.string   "login"
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
     t.string   "password_salt",                       :default => "", :null => false
@@ -75,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20101024190319) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
