@@ -4,3 +4,5 @@ log/*.log
 tmp/**/*
 *.rbc
 .*sw*
+tags
+public/system
