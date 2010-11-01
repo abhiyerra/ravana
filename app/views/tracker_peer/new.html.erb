@@ -4,10 +4,33 @@
 that when you join you are essentially asking a request and the current site owner has to accept you as a 
 TrackerPeer before sending your site updates.</p>
 
-<%= form_for :tracker_peer do |f| %>
-  <p>
+<%= form_for :tracker_peer, :url => { :action => 'create' } do |f| %>
+<p>
+  <%= f.label :name %>
+  <br>
+  <%= f.text_field :name %>
+</p>
 
-    <%= f.label :domain %>
-  </p>
+<p>
+  <%= f.label :url %>
+  <br>
+  <%= f.text_field :url %>
+</p>
+
+<p>
+  <%= f.label :callback_url %>
+  <br>
+  <%= f.text_field :callback_url %>
+</p>
+
+<p>
+  <%= f.label :admin_email %>
+  <br>
+  <%= f.text_field :admin_email %>
+</p>
+
+<p>
+  <%= submit_tag 'Request' %>
+<p>
 
 <% end %>
