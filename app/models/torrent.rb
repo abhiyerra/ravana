@@ -30,13 +30,13 @@ class Torrent < ActiveRecord::Base
     end
     decoded['announce-list'] = decoded['announce-list'].uniq
 
-#    torrent_file.write(decoded_torrent.bencode)
+    torrent_file.write(decoded.bencode)
   end
 
   def send_to_tracker_peers
     # Only send to verified trackers.
     TrackerPeer.where(:is_allowed => true).each do |tracker_peer|
-      tracker_peer.send_new_torrent
+      tracker_peer.send_new_torrent self
     end
   end
 

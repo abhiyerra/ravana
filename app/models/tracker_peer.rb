@@ -22,7 +22,7 @@ class TrackerPeer < ActiveRecord::Base
 
   end
 
-  def send_new_torrent(torrent)
+  def self.send_new_torrent(torrent)
       TrackerPeer.all.each do |tracker_peer|
           torrent_info = {
               'name'             => torrent.name,
@@ -30,7 +30,8 @@ class TrackerPeer < ActiveRecord::Base
               'info_hash'        => torrent.info_hash,
               'torrent_file_url' => torrent.torrent.url
           }
-          
+
+          # TODO Do this using oauth.
           RestRequest.post(tracker_peer.callback_url, torrent_info)
       end
   end

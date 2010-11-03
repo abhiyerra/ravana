@@ -29,7 +29,6 @@ class TrackerPeerController < ApplicationController
     @tracker_peer = TrackerPeer.find(params[:id])
     @tracker_peer.destroy
 
-    redirect_to :
+    redirect_to :back
   end
-
 end
