@@ -15,7 +15,21 @@ class TrackerPeerController < ApplicationController
     @tracker_peer.save
   end
 
-  def manage
+  # These are admin side only.
+  def index
+    @tracker_peers = TrackerPeer.all
+  end
+
+  def show
 
   end
+
+
+  def destroy
+    @tracker_peer = TrackerPeer.find(params[:id])
+    @tracker_peer.destroy
+
+    redirect_to :
+  end
+
 end

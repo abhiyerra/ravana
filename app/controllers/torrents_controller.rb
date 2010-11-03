@@ -12,8 +12,6 @@ class TorrentsController < ApplicationController
 
   def create
     @torrent = Torrent.create(params[:torrent])
-
-    # TODO Modify the torrent and add local tracker
     @torrent.add_tracker
     
     # TODO Add a queue to send webhook response to TrackerPeers.

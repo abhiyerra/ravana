@@ -1,34 +1,35 @@
 require 'bencode'
 
 class Torrent < ActiveRecord::Base
-  belongs_to :categories
+  belongs_to :user
+  belongs_to :category
+
   has_many :peers
 
   has_attached_file :torrent
 
   after_save :send_to_tracker_peers
 
-  # TODO: Before destroy should delete the peers.
   def total_downloaded
-    0.0
+    self.peers.map(&:downloaded).sum
   end
 
-  def total_leeched
-    0.0
+  def total_uploaded
+    self.peers.map(&:uploaded).sum
   end
 
   def add_tracker
     torrent_file = self.torrent.to_file
-    encoded_torrent = torrent_file.read
-    decoded_torrent = encoded_torrent.bdecode
+    encoded = torrent_file.read
+    decoded = encoded.bdecode
 
-    if decoded_torrent['announce-list'].nil?
-      decoded_torrent['announce-list'] = [TrackerAddress]
+    if decoded['announce-list'].nil?
+      decoded['announce-list'] = [TrackerAddress]
     else
-      decoded_torrent['announce-list'] << TrackerAddress unless decoded_torrent['announce-list'].include?(TrackerAddress)
+      decoded['announce-list'] << TrackerAddress
     end
+    decoded['announce-list'] = decoded['announce-list'].uniq
 
-    # TODO
 #    torrent_file.write(decoded_torrent.bencode)
   end
 
