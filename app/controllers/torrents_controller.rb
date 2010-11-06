@@ -1,6 +1,7 @@
 class TorrentsController < ApplicationController
   def show
     @torrent = Torrent.find(params[:id])
+    @comments = []
   end
 
   def new
