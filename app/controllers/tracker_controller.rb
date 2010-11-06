@@ -1,3 +1,4 @@
+
 class TrackerController < ApplicationController
   NumWant = 50
 

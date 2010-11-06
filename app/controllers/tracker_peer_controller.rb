@@ -7,7 +7,7 @@ class TrackerPeerController < ApplicationController
   #    b. Verify user manually.
   # 4. Once verified then send out new_torrents.
   def new
-     
+    
   end
 
   def create
@@ -21,7 +21,7 @@ class TrackerPeerController < ApplicationController
   end
 
   def show
-
+  
   end
 
 
