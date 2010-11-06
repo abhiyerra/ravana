@@ -18,12 +18,18 @@
     </tr>
 
     <tr>
-      <td class="torrent-box-title">Trackers</td>
-      <td><%= trackers_for @torrent %></td>
-    </tr>
-    <tr>
       <td class="torrent-box-title">Description</td>
       <td><%= @torrent.description %></td>
+    </tr>
+
+    <tr>
+      <td class="torrent-box-title">Files</td>
+      <td><%= @torrent.torrent_file_decoded['info']['name'] %></td>
+    </tr>
+
+    <tr>
+      <td class="torrent-box-title">Trackers</td>
+      <td><%= trackers_for @torrent %></td>
     </tr>
   </table>
 

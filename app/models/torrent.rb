@@ -18,6 +18,11 @@ class Torrent < ActiveRecord::Base
     self.peers.map(&:uploaded).sum
   end
 
+  def torrent_file_decoded
+    torrent_file = torrent.to_file.read
+    torrent_file.bdecode
+  end
+
   def trackers
     torrent_file = torrent.to_file.read
     torrent_file.bdecode['announce-list']
