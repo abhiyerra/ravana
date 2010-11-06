@@ -20,9 +20,6 @@
         <h1><%= link_to 'Ravana', root_url %></h1>
 
         <% if user_signed_in? %>
-          <div class="login-box">
-          </div>
-
           <%= render :partial => "torrents/search_box" %>
 
           <ul id="header-menu">
@@ -46,9 +43,7 @@
 
       <% if user_signed_in? %>
         <div class="span-24 footer">
-          <ul id="footer-menu">
-            <li><%= link_to 'TrackerPeer', new_tracker_peer_url %></li>
-          </ul>
+          <%= link_to 'TrackerPeer', new_tracker_peer_url %>
         </div>
       <% end %>
     </div>

@@ -1,7 +1,7 @@
 <div class="search-box">
   <% form_tag search_url, :method => :get do %>
-    <%= text_field_tag :q, '' %>
-    <%= submit_tag 'Search' %>
+    <%= text_field_tag :q, '', :class => 'title' %>
+    <%= image_submit_tag 'search.png' %>
   <% end %>
 </div>
 

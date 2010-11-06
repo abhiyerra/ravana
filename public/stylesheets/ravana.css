@@ -1,5 +1,20 @@
+body {
+  background: black;
+  color: grey; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: grey; }
+
 .header div.search-box {
-  float: right; }
+  float: right;
+  height: 33px;
+  text-align: bottom;
+  vertical-align: top; }
+  .header div.search-box form {
+    height: 33px; }
+    .header div.search-box form #q {
+      margin-top: 0;
+      margin-bottom: 0; }
 .header ul#header-menu {
   list-style-type: none;
   padding: 0; }
@@ -9,12 +24,6 @@
     .header ul#header-menu li a {
       color: red;
       font-size: 120%; }
-
-.footer ul#footer-menu {
-  list-style-type: none;
-  padding: 0; }
-  .footer ul#footer-menu li {
-    float: left;
-    margin-right: 1em; }
-    .footer ul#footer-menu li a {
-      font-size: 80%; }
+.header .footer {
+  font-size: 70%;
+  text-align: center; }

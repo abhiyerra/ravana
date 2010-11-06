@@ -19,7 +19,9 @@ class Torrent < ActiveRecord::Base
   end
 
   def add_tracker
-    torrent_file = self.torrent.to_file
+    torrent_file = torrent.to_file
+
+
     encoded = torrent_file.read
     decoded = encoded.bdecode
 
