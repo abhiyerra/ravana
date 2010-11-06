@@ -4,14 +4,15 @@ class CreatePeers < ActiveRecord::Migration
       t.integer :torrent_id
 
       t.string :peer_id
-      t.integer :port
-
-      t.float :uploaded
-      t.float :downloaded
-
-      t.float :left
 
       t.string :ip
+      t.integer :port
+
+      t.integer :uploaded
+      t.integer :downloaded
+
+      t.integer :left
+
       t.string :event
 
       t.timestamps
