@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
     .header div.search-box form {
       height: 33px; }
       .header div.search-box form #q {
+        vertical-align: top;
         margin-top: 0;
         margin-bottom: 0; }
   .header ul#header-menu {
