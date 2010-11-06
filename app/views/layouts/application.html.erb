@@ -17,16 +17,19 @@
   <body>
     <div class="container">
       <div class="span-24 header">
-        <h1><%= link_to 'Ravana', root_url %></h1>
+        <div class="header-title">
+          <h1><%= link_to 'Ravana', root_url %></h1>
+        </div>
 
         <% if user_signed_in? %>
           <%= render :partial => "torrents/search_box" %>
 
-          <ul id="header-menu">
-            <li><%= link_to 'Latest', latest_url %></li>
-            <li><%= link_to 'Categories', categories_url %></li>
-            <li><%= link_to 'Upload', new_torrent_url %></li>
-          </ul>
+          <div class="span-24">
+            <ul id="header-menu">
+              <li><%= link_to 'Latest', latest_url %></li>
+              <li><%= link_to 'Upload', new_torrent_url %></li>
+            </ul>
+          </div>
         <% end %>
       </div>
 

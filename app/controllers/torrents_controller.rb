@@ -31,10 +31,6 @@ class TorrentsController < ApplicationController
     # TODO Send request to remote peer
   end
 
-  def latest
-    @torrents = Torrent.limit(10)
-  end
-
   def search
     @torrents = Torrent.search(params[:q])
   end

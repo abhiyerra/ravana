@@ -7,7 +7,7 @@
       <th>Created</th>
     </tr>
   </thead>
-  <% @torrents.each do |torrent| %>
+  <% torrents.each do |torrent| %>
     <tr>
       <td class="torrent-title"><%= link_to torrent.name, torrent_url(torrent) %></td>
       <td><%= torrent.total_downloaded %></td>

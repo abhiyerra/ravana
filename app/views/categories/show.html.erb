@@ -1,1 +1,4 @@
-<%= render :partial => "torrents/list", :locals => { :torrents => Torrent.where(:category_id => @category.id) } %>
+<div class="span-24">
+  <h2><%= @category.name %></h2>
+  <%= render :partial => "torrents/list", :locals => { :torrents => Torrent.where(:category_id => @category.id) } %>
+</div>
