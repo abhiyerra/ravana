@@ -1,7 +1,6 @@
 <table>
   <thead>
     <tr>
-      <th></th>
       <th>Name</th>
       <th>SE</th>
       <th>LE</th>
@@ -10,7 +9,7 @@
   </thead>
   <% @torrents.each do |torrent| %>
     <tr>
-      <td><%= link_to torrent.name, torrent_url(torrent) %></td>
+      <td class="torrent-title"><%= link_to torrent.name, torrent_url(torrent) %></td>
       <td><%= torrent.total_downloaded %></td>
       <td><%= torrent.total_uploaded %></td>
       <td><%= time_ago_in_words torrent.created_at %></td>

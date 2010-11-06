@@ -19,6 +19,7 @@ class TorrentsController < ApplicationController
     else
       @torrent = Torrent.create(params[:torrent])
     end
+    
     @torrent.add_tracker
     TrackerPeer.send_new_torrent(@torrent)
  

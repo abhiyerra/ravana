@@ -1,11 +1,33 @@
-<div class="torrent-header">
+<div class="span-24">
   <h1><%= @torrent.name %></h1>
 
-  <%= link_to 'Download', @torrent.torrent.url %>
+  <table class="span-13">
+    <tr>
+      <td class="torrent-box-title">Download Link</td>
+      <td><%= link_to 'Download', @torrent.torrent.url %></td>      
+    </tr>
 
-  <div>
-    <%= @torrent.description %>
-  </div>
+    <tr>
+      <td class="torrent-box-title">Seeding</td>
+      <td><%# TODO %></td>
+    </tr>
+
+    <tr>
+      <td class="torrent-box-title">Leeching</td>
+      <td><%# TODO %></td>
+    </tr>
+
+    <tr>
+      <td class="torrent-box-title">Trackers</td>
+      <td><%= trackers_for @torrent %></td>
+    </tr>
+    <tr>
+      <td class="torrent-box-title">Description</td>
+      <td><%= @torrent.description %></td>
+    </tr>
+  </table>
+
+
 </div>
 
 <div class="comments">

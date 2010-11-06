@@ -24,6 +24,22 @@ h1, h2, h3, h4, h5, h6 {
     .header ul#header-menu li a {
       color: red;
       font-size: 120%; }
-.header .footer {
+
+.footer {
+  width: 100%;
   font-size: 70%;
   text-align: center; }
+
+table thead tr th {
+  background-color: #41383c; }
+table tbody tr td {
+  vertical-align: top;
+  background-color: #666362; }
+table tbody tr td.torrent-box-title {
+  font-size: 120%;
+  font-weight: bold;
+  color: #4e8975; }
+table tbody tr td.torrent-title a {
+  color: #4c7d7e;
+  text-decoration: none;
+  font-size: 120%; }

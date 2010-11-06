@@ -1,4 +1,4 @@
-class TrackerPeerController < ApplicationController
+class TrackerPeersController < ApplicationController
   # Steps to verifying a tracker peer.
   # 1. Display a form which asks for tacker_infomation.
   # 2. Add that form to the database.
