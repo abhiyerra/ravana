@@ -27,9 +27,9 @@ class TrackerController < ApplicationController
     @numwant = params[:numwant] ? params[:numwant].to_i : NumWant
 
     @peers = Peer.where(["torrent_id = ? and event != 'stopped'", @torrent.id])
-#    if @peers.empty?
-#      return render :text => { "failure reason" => "No peers" }.bencode
-#    end
+    if @peers.empty?
+      return render :text => { "failure reason" => "No peers" }.bencode
+    end
 
     num_completed_peers = Peer.where(["torrent_id = ? and event = 'completed'", @torrent.id]).count
 
@@ -37,7 +37,7 @@ class TrackerController < ApplicationController
       #"warning message" => "",
       "interval" => TrackerInterval,
       "min interval" => MinTrackerInterval,
-      "tracker id" => "", # Do this for the peer.
+      "tracker id" => @peer.peer_id,
       "complete" => num_completed_peers,
       "incomplete" => @peers.count,
       "peers" => @peers.map do |peer|
@@ -55,11 +55,6 @@ class TrackerController < ApplicationController
 
 
 #     * tracker id: A string that the client should send back on its next announcements. If absent and a previous announce sent a tracker id, do not discard the old value; keep using it.
-#     * complete: number of peers with the entire file, i.e. seeders (integer)
-#     * incomplete: number of non-seeder peers, aka "leechers" (integer)
-
-
-
 
 
 
