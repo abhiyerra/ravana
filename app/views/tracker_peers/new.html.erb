@@ -1,36 +1,39 @@
 <h2>Join as TrackerPeer</h2>
 
-<p>When you become a TrackerPeer whatever updates sent to the site will also be relayed to your site. Please note
-that when you join you are essentially asking a request and the current site owner has to accept you as a 
-TrackerPeer before sending your site updates.</p>
+<p class="span-13">When you become a TrackerPeer whatever updates sent to the site will 
+  also be relayed to your site. Please note that when you join you are
+  essentially asking a request and the current site owner has to accept
+  you as a TrackerPeer before sending your site updates.</p>
 
-<%= form_for :tracker_peer, :url => { :action => 'create' } do |f| %>
-<p>
-  <%= f.label :name %>
-  <br>
-  <%= f.text_field :name %>
-</p>
 
-<p>
-  <%= f.label :url %>
-  <br>
-  <%= f.text_field :url %>
-</p>
+<div class="span-24"> 
+  <%= form_for :tracker_peer, :url => { :action => 'create' } do |f| %>
+  <p>
+    <%= f.label :url %>
+    <br>
+    <%= f.text_field :url, :class => "title" %>
+  </p>
 
-<p>
-  <%= f.label :callback_url %>
-  <br>
-  <%= f.text_field :callback_url %>
-</p>
+  <p>
+    <%= f.label :callback_url %>
+    <br>
+    <%= f.text_field :callback_url, :class => "title" %>
+  </p>
 
-<p>
-  <%= f.label :admin_email %>
-  <br>
-  <%= f.text_field :admin_email %>
-</p>
+  <p>
+    <%= f.label :admin_email %>
+    <br>
+    <%= f.text_field :admin_email, :class => "title" %>
+  </p>
 
-<p>
-  <%= submit_tag 'Request' %>
-<p>
+  <p>
+    <%= f.label :public_key %>
+    <br>
+    <%= f.text_area :public_key %>
+  </p>
 
+  <p>
+    <%= submit_tag 'Request' %>
+  <p>
+</div>
 <% end %>

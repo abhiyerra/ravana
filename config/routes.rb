@@ -20,9 +20,9 @@ Tradings::Application.routes.draw do
 #  match 'tracker-peer/new' => 'tracker_peers#new', :as => :new_tracker_peer
   match 'announce' => 'tracker#announce'
 
-  resources :tracker_peers
   resources :categories
   resources :torrents
+  resources :tracker_peers
 
   # Sample resource route with options:
   #   resources :products do
