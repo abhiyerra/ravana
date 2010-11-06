@@ -10,7 +10,7 @@ gem 'haml'
 gem 'jquery-rails'
 gem 'oauth'
 gem 'devise'
-
+gem 'openpgp'
 
 # Use unicorn as the web server
 # gem 'unicorn'
