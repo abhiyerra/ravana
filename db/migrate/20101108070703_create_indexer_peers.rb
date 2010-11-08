@@ -1,6 +1,6 @@
-class CreateTrackerPeers < ActiveRecord::Migration
+class CreateIndexerPeers < ActiveRecord::Migration
   def self.up
-    create_table :tracker_peers do |t|
+    create_table :indexer_peers do |t|
       t.string :name
 
       t.string :url
@@ -21,6 +21,6 @@ class CreateTrackerPeers < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :tracker_peers
+    drop_table :indexer_peers
   end
 end

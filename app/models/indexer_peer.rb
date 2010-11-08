@@ -1,4 +1,4 @@
-class TrackerPeer < ActiveRecord::Base
+class IndexerPeer < ActiveRecord::Base
   
   validates_uniqueness_of :name
   validates_uniqueness_of :url
@@ -23,7 +23,7 @@ class TrackerPeer < ActiveRecord::Base
   end
 
   def self.send_new_torrent(torrent)
-      TrackerPeer.all.each do |tracker_peer|
+      self.all.each do |tracker_peer|
           torrent_info = {
               'name'             => torrent.name,
               'description'      => torrent.description,
