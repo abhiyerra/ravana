@@ -1,13 +1,12 @@
 <h2>Join as IndexerPeer</h2>
 
-<p class="span-13">When you become a TrackerPeer whatever updates sent to the site will 
+<p class="span-13">When you become a IndexerPeer whatever updates sent to the site will 
   also be relayed to your site. Please note that when you join you are
   essentially asking a request and the current site owner has to accept
-  you as a TrackerPeer before sending your site updates.</p>
-
+  you as a IndexerPeer before sending your site updates.</p>
 
 <div class="span-24"> 
-  <%= form_for :tracker_peer, :url => { :action => 'create' } do |f| %>
+  <%= form_for :indexer_peer, :url => { :action => 'create' } do |f| %>
   <p>
     <%= f.label :url %>
     <br>

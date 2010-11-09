@@ -10,10 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101106065650) do
+ActiveRecord::Schema.define(:version => 20101108070703) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "indexer_peers", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "url"
+    t.string   "callback_url"
+    t.string   "consumer_key"
+    t.string   "consumer_secret_key"
+    t.string   "comsumer_request_token_url"
+    t.string   "consumer_access_token_url"
+    t.string   "consumer_authorize_url"
+    t.text     "public_key"
+    t.boolean  "is_trusted"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,22 +58,6 @@ ActiveRecord::Schema.define(:version => 20101106065650) do
     t.datetime "updated_at"
     t.integer  "category_id"
     t.integer  "user_id"
-  end
-
-  create_table "tracker_peers", :force => true do |t|
-    t.string   "name"
-    t.string   "url"
-    t.string   "callback_url"
-    t.string   "admin_email"
-    t.string   "consumer_key"
-    t.string   "consumer_secret_key"
-    t.string   "comsumer_request_token_url"
-    t.string   "consumer_access_token_url"
-    t.string   "consumer_authorize_url"
-    t.boolean  "is_allowed"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "public_key"
   end
 
   create_table "users", :force => true do |t|

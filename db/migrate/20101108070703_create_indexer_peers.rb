@@ -1,12 +1,10 @@
 class CreateIndexerPeers < ActiveRecord::Migration
   def self.up
     create_table :indexer_peers do |t|
-      t.string :name
+      t.integer :user_id
 
       t.string :url
       t.string :callback_url
-
-      t.string :admin_email
 
       t.string :consumer_key
       t.string :consumer_secret_key
@@ -14,7 +12,9 @@ class CreateIndexerPeers < ActiveRecord::Migration
       t.string :consumer_access_token_url
       t.string :consumer_authorize_url
 
-      t.boolean :is_allowed
+      t.text :public_key
+
+      t.boolean :is_trusted
 
       t.timestamps
     end

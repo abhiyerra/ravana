@@ -18,7 +18,7 @@ class TorrentsController < ApplicationController
     end
     
     @torrent.add_tracker
-    TrackerPeer.send_new_torrent(@torrent)
+    IndexerPeer.send_new_torrent(@torrent)
  
     redirect_to :action => 'show', :id => @torrent
   end

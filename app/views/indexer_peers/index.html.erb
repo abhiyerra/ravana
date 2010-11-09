@@ -1,0 +1,17 @@
+<h2>IndexerPeers</h2>
+
+<table>
+  <thead>
+      <tr>
+          <th>Url</th>
+          <th>Email</th>
+          <th>Trust</th>
+      </tr>
+  </thead>
+
+  <tbody>
+      <% @indexer_peers.each do |peer| %>
+          <%= peer.url %>
+      <% end %>
+  </tbody>
+</table>

@@ -1,6 +1,5 @@
 class IndexerPeer < ActiveRecord::Base
   
-  validates_uniqueness_of :name
   validates_uniqueness_of :url
   validates_uniqueness_of :callback_url
  
