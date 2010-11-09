@@ -18,6 +18,10 @@ class Torrent < ActiveRecord::Base
     self.peers.map(&:uploaded).sum
   end
 
+  def download_file_from_url
+
+  end
+
   def torrent_file_decoded
     torrent_file = torrent.to_file.read
     torrent_file.bdecode
@@ -44,9 +48,9 @@ class Torrent < ActiveRecord::Base
     torrent_file.write(decoded.bencode)
   end
 
-  def send_to_tracker_peers
+  def send_to_indexer_peers
     # Only send to verified trackers.
-    TrackerPeer.where(:is_allowed => true).each do |tracker_peer|
+    IndexerPeer.where(:is_allowed => true).each do |tracker_peer|
       tracker_peer.send_new_torrent self
     end
   end

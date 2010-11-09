@@ -24,4 +24,18 @@ class IndexerPeersController < ApplicationController
 
     redirect_to :back
   end
+
+  # This should be the point where the Indexer receives the request.
+  def receive
+      params[:name]
+      params[:description]
+      params[:info_hash]
+      params[:torrent_file_url]
+
+      torrent = Torrent.new(params)
+      torrent.download_file_from_url(params[:torrent_file_url])
+      
+      torrent.send_to_indexer_peers
+  end
+
 end
