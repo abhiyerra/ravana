@@ -24,6 +24,10 @@ class IndexerPeer < ActiveRecord::Base
   def self.send_new_torrent(torrent)
       self.all.each do |tracker_peer|
           torrent_info = {
+              'tracker_key'      => torrent.id, # TODO: Change to local key.
+          }
+          
+          torrent_info[:torrent] = {
               'name'             => torrent.name,
               'description'      => torrent.description,
               'info_hash'        => torrent.info_hash,

@@ -8,19 +8,21 @@ class TorrentsController < ApplicationController
   end
 
   def create
+    torrent = Torrent.create(params[:torrent])
+
     # TODO
-    if params[:tracker_peer]
+    if params[:tracker_key]
       # We want to handle it a bit differently if it
       # comes from a tracker peer.
-      @torrent = Torrent.create(params[:torrent])
+      indexer_peer = IndexerPeer.where(:tracker_key => params[:tracker_key])
+      torrent.indexer_peer = indexer_peer
     else
-      @torrent = Torrent.create(params[:torrent])
+      torrent.user = current_user
     end
-    
-    @torrent.add_tracker
-    IndexerPeer.send_new_torrent(@torrent)
- 
-    redirect_to :action => 'show', :id => @torrent
+
+    torrent.save    
+
+    redirect_to :action => 'show', :id => torrent
   end
 
   def destroy

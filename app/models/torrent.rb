@@ -8,7 +8,8 @@ class Torrent < ActiveRecord::Base
 
   has_attached_file :torrent
 
-  after_save :send_to_tracker_peers
+  before_save :add_tracker
+  after_save :send_to_indexer_peers
 
   def total_downloaded
     self.peers.map(&:downloaded).sum
