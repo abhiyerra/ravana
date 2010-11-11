@@ -3,15 +3,23 @@
 <table>
   <thead>
       <tr>
+          <th>id</th>
           <th>Url</th>
           <th>Email</th>
-          <th>Trust</th>
+          <th>Trust Level</th>
+          <th>Trusted?</th>
       </tr>
   </thead>
 
   <tbody>
       <% @indexer_peers.each do |peer| %>
-          <%= peer.url %>
+          <tr>
+              <td><%= link_to peer.id, indexer_peer_url(peer) %></td>
+              <td><%= peer.url %></td>
+              <td><%= peer.user.email %></td>
+              <td><%= peer.user.trust_level %></td>
+              <td><%= peer.is_trusted %></td>
+          </tr>
       <% end %>
   </tbody>
 </table>

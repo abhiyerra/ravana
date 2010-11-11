@@ -1,8 +1,12 @@
+require 'gpgme'
+
 class IndexerPeer < ActiveRecord::Base
   
   validates_uniqueness_of :url
   validates_uniqueness_of :callback_url
- 
+
+  belongs_to :user
+
   def verify_tracker_peer
       # t.string :name
 
@@ -19,6 +23,14 @@ class IndexerPeer < ActiveRecord::Base
 
       # t.boolean :is_allowed
 
+  end
+
+  def public_key_stats
+#    GPGMe::public_key_stats(self.public_key)
+  end
+
+  def signatures
+    GPGMe.list_sigs #(self.public_key)
   end
 
   def self.send_new_torrent(torrent)

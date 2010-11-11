@@ -19,7 +19,7 @@ Tradings::Application.routes.draw do
   match 'search' => 'torrents#search', :as => :search
 #  match 'tracker-peer/new' => 'tracker_peers#new', :as => :new_tracker_peer
   match 'announce' => 'tracker#announce', :format => 'plain'
-
+  match 'indexer_peers/trusted/:id/:is_trusted' => 'indexer_peers#trusted'
 
   resources :categories
   resources :torrents

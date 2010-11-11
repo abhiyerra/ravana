@@ -16,11 +16,16 @@ class CreateIndexerPeers < ActiveRecord::Migration
 
       t.boolean :is_trusted
 
+      t.integer :indexer_peer_id
+
       t.timestamps
     end
+
+
   end
 
   def self.down
     drop_table :indexer_peers
+    remove_column :users, :indexer_peer_id
   end
 end

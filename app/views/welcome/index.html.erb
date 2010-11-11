@@ -1,4 +1,12 @@
-<ul>
-  <li><%= link_to 'Login', new_user_session_path %></li>
-  <li><%= link_to 'Register', new_user_registration_path %></li>
-</ul>
+<div class="welcome-box span-24">
+  <div class="welcome-box-image">
+    <%= image_tag 'ravana.jpg' %>
+  </div>
+
+  <div class="welcome-login-box">
+    <ul>
+      <li><%= link_to 'Login', new_user_session_path %></li>
+      <li><%= link_to 'Register', new_user_registration_path %></li>
+    </ul>
+  </div>
+</div>

@@ -48,6 +48,7 @@ class Torrent < ActiveRecord::Base
 
     torrent_file.write(decoded.bencode)
   end
+
   def send_to_indexer_peers
     # Only send to verified trackers.
     IndexerPeer.where(:is_allowed => true).each do |tracker_peer|

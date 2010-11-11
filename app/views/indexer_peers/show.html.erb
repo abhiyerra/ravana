@@ -1,0 +1,47 @@
+<h2>IndexerPeer Verification</h2>
+
+<table>
+  <tr>
+      <td>Url</td>
+      <td><%= @indexer_peer.url %></td>
+  </tr>
+
+  <tr>
+      <td>Callback Url</td>
+      <td><%= @indexer_peer.callback_url %></td>
+  </tr>
+
+  <tr>
+      <td>Email</td>
+      <td><%= @indexer_peer.user.email %></td>
+  </tr>
+
+  <tr>
+      <td>Public Key</td>
+      <td><%= @indexer_peer.public_key %></td>
+  </tr>
+     
+  <tr>
+      <td>Trust Level</td>
+      <td><%= @indexer_peer.user.trust_level %></td>
+  </tr>
+
+  <tr>
+      <td>Signatures</td>
+      <td>
+          <ul>
+              <% @indexer_peer.signatures.each do |signature| %>
+                  <li><%= signature %></li>
+              <% end %>
+          </ul>
+      </td>
+  </tr>
+
+  <tr>
+      <td>Trusted?</td>
+      <% if @indexer_peer.is_trusted %>
+          <td><%= link_to 'No', :action => 'trusted', :id => @indexer_peer, :is_trusted => 'no' %></td>
+      <% else %>
+          <td><%= link_to 'Yes', :action => 'trusted', :id => @indexer_peer, :is_trusted => 'yes' %></td>
+      <% end %>
+</table>

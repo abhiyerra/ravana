@@ -54,3 +54,10 @@ table tbody tr td.torrent-title a {
   color: #4c7d7e;
   text-decoration: none;
   font-size: 120%; }
+
+.welcome-box .welcome-box-image {
+  float: left;
+  width: 50%; }
+.welcome-box .welcome-login-box {
+  margin-top: 5em;
+  font-size: 120%; }

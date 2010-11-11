@@ -8,4 +8,11 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
   has_many :torrents
+
+  has_many :indexer_peers
+
+  # TODO: Fill this in with PGP based checks.
+  def trust_level
+    0
+  end
 end

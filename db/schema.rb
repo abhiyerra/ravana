@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20101108070703) do
     t.string   "consumer_authorize_url"
     t.text     "public_key"
     t.boolean  "is_trusted"
+    t.integer  "indexer_peer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
