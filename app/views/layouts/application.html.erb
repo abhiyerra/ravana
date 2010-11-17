@@ -33,12 +33,15 @@
         <% end %>
       </div>
 
-      <% if notice || alert %>
-        <div class="span-24" id="messages">
+      <div class="span-24" id="messages">
+        <% if notice %>
           <p class="notice"><%= notice %></p>
+        <% end %>
+          
+        <% if alert %>
           <p class="alert"><%= alert %></p>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
 
       <div class="span-24">
         <%= yield %>

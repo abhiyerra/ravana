@@ -30,13 +30,11 @@ class IndexerPeer < ActiveRecord::Base
   def signatures
     gpgme = GPGME::Ctx.new 
     
-    # TODO Look at actual fingerprint
-    fpr = "F3702CBB2E0E319F3BC77D8A67280F23EC92C369"
-    
     pair = []
-    gpgme.get_key(fpr).uids.each do |uid|
+    gpgme.get_key(self.fingerprint).uids.each do |uid|
       pair << "#{uid.name} #{uid.email}"
     end
+
     pair
   end
 
