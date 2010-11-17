@@ -61,3 +61,10 @@ table tbody tr td.torrent-title a {
 .welcome-box .welcome-login-box {
   margin-top: 5em;
   font-size: 120%; }
+
+input[type="text"],
+input[type="password"],
+textarea {
+  background-color: transparent;
+  color: red;
+  border-color: red; }
