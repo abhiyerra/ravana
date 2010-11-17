@@ -29,6 +29,13 @@
               <li><%= link_to 'Latest', latest_url %></li>
               <li><%= link_to 'Upload', new_torrent_url %></li>
             </ul>
+
+            <ul id="user-stats">
+              <li>Up: <%= current_user.total_upload %> MB</li>
+              <li>Down: <%= current_user.total_download %> MB</li>
+              <li>Ratio: <%= current_user.ratio %></li>
+              <li>Required: <%= current_user.required_ratio %></li>
+            </ul>
           </div>
         <% end %>
       </div>

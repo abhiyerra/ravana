@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.1'
+gem 'rails', '3.0.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -11,7 +11,6 @@ gem 'jquery-rails'
 gem 'oauth'
 gem 'devise'
 gem 'gpgme'
-gem 'oauth'
 gem "oauth-plugin", ">=0.4.0.pre1"
 
 # Use unicorn as the web server

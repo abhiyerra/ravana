@@ -21,6 +21,7 @@ h1, h2, h3, h4, h5, h6 {
         margin-top: 0;
         margin-bottom: 0; }
   .header ul#header-menu {
+    float: left;
     list-style-type: none;
     padding: 0; }
     .header ul#header-menu li {
@@ -29,6 +30,14 @@ h1, h2, h3, h4, h5, h6 {
       .header ul#header-menu li a {
         color: red;
         font-size: 120%; }
+  .header ul#user-stats {
+    float: right;
+    list-style-type: none;
+    padding: 0; }
+    .header ul#user-stats li {
+      float: left;
+      margin-right: 1em;
+      font-size: 80%; }
 
 .footer {
   width: 100%;

@@ -17,9 +17,10 @@ Tradings::Application.routes.draw do
 
   match 'latest' => 'categories#index', :as => :latest
   match 'search' => 'torrents#search', :as => :search
-#  match 'tracker-peer/new' => 'tracker_peers#new', :as => :new_tracker_peer
-  match 'announce' => 'tracker#announce', :format => 'plain'
   match 'indexer_peers/trusted/:id/:is_trusted' => 'indexer_peers#trusted'
+
+  match 'announce' => 'tracker#announce', :format => 'plain' # Public Tracker
+  match ':ref_code/announce' => 'tracker#announce', :format => 'plain'
 
   resources :categories
   resources :torrents
