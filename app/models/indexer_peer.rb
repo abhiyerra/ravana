@@ -1,5 +1,3 @@
-require 'gpgme'
-
 class IndexerPeer < ActiveRecord::Base
   
   validates_uniqueness_of :url
@@ -26,11 +24,20 @@ class IndexerPeer < ActiveRecord::Base
   end
 
   def public_key_stats
-#    GPGMe::public_key_stats(self.public_key)
+
   end
 
   def signatures
-    GPGMe.list_sigs #(self.public_key)
+    gpgme = GPGME::Ctx.new 
+    
+    # TODO Look at actual fingerprint
+    fpr = "F3702CBB2E0E319F3BC77D8A67280F23EC92C369"
+    
+    pair = []
+    gpgme.get_key(fpr).uids.each do |uid|
+      pair << "#{uid.name} #{uid.email}"
+    end
+    pair
   end
 
   def self.send_new_torrent(torrent)
