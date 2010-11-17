@@ -11,8 +11,8 @@ gem 'jquery-rails'
 gem 'oauth'
 gem 'devise'
 gem 'gpgme'
+gem 'oauth'
 gem "oauth-plugin", ">=0.4.0.pre1"
-
 
 # Use unicorn as the web server
 # gem 'unicorn'
