@@ -13,6 +13,7 @@ class CreateIndexerPeers < ActiveRecord::Migration
       t.string :consumer_authorize_url
 
       t.text :public_key
+      t.string :fingerprint
 
       t.boolean :is_trusted
 
