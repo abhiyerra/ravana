@@ -17,7 +17,6 @@ Tradings::Application.routes.draw do
 
   match 'latest' => 'categories#index', :as => :latest
   match 'search' => 'torrents#search', :as => :search
-  match 'indexer_peers/trusted/:id/:is_trusted' => 'indexer_peers#trusted'
 
   match 'announce' => 'tracker#announce', :format => 'plain' # Public Tracker
   match ':ref_code/announce' => 'tracker#announce', :format => 'plain'
@@ -26,6 +25,7 @@ Tradings::Application.routes.draw do
   resources :torrents
   resources :tracker_peers
   resources :indexer_peers
+  resources :oauth_clients
 
   # Sample resource route with options:
   #   resources :products do
