@@ -11,6 +11,8 @@ class CreateTorrents < ActiveRecord::Migration
       t.integer :torrent_file_size
       t.datetime :torrent_updated_at
 
+      t.integer :alternate_to_id # Should point to another Torrent.
+
       t.timestamps
     end
   end

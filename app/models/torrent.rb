@@ -3,13 +3,16 @@ require 'bencode'
 class Torrent < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
-
   has_many :peers
+
+
+  belongs_to :torrent, :foreign_key => 'alternate_to_id'
+  has_many :torrent, :foreign_key => 'alternate_to_id'
 
   has_attached_file :torrent
 
   before_save :add_tracker
-  after_save :send_to_indexer_peers
+  after_create :send_to_indexer_peers
 
   def total_downloaded
     self.peers.map(&:downloaded).sum

@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20101108070703) do
     t.string   "torrent_content_type"
     t.integer  "torrent_file_size"
     t.datetime "torrent_updated_at"
+    t.integer  "alternate_to_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
@@ -75,12 +76,14 @@ ActiveRecord::Schema.define(:version => 20101108070703) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "ref_code",                                               :null => false
     t.boolean  "is_admin",                            :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
+  add_index "users", ["ref_code"], :name => "index_users_on_ref_code", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
