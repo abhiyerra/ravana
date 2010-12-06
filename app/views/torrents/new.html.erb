@@ -21,7 +21,7 @@
   <p>
     <%= f.label :file %>
     <br>
-    <%= f.file_field :torrent %>
+    <%= f.file_field :torrent, :accept => "*.torrent" %>
   </p>
 
   <%= submit_tag 'Upload' %>
