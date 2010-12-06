@@ -1,0 +1,17 @@
+# What is the domain of this server.
+domain: http://tr.adin.gs
+
+# When someone uploads a file do we want to keep the
+# trackers that are already a part of the torrent or do
+# we want to remove it and just keep ours?
+keep_external_trackers: true
+
+# Do we want our current tracker running or are we reliant
+# on a third party tracker.
+tracker_enabled: true
+
+# If the tracker_enabled is set to false please set the
+# following to the appropriate tracker url and point to the
+# announce url.
+
+# tracker_address: http://localhost:3000/announce

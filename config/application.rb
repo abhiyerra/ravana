@@ -40,5 +40,3 @@ module Tradings
     config.filter_parameters += [:password]
   end
 end
-
-TrackerAddress = "http://localhost:3000/announce"
