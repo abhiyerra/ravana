@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   def check_login
     # TODO: This should actually redirect to welcome.
-    redirect_to new_user_session_path unless user_signed_in?
+    return redirect_to new_user_session_path unless user_signed_in?
+  end
+
+  def is_admin?
+    return redirect_to :back unless current_user.is_admin
   end
 end

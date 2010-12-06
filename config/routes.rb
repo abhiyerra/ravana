@@ -21,6 +21,8 @@ Tradings::Application.routes.draw do
   match 'announce' => 'tracker#announce', :format => 'plain' # Public Tracker
   match ':ref_code/announce' => 'tracker#announce', :format => 'plain'
 
+  match 'manager' => 'manager#index'
+
   resources :categories
   resources :torrents
   resources :tracker_peers

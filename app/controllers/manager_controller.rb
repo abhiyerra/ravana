@@ -1,4 +1,7 @@
 class ManagerController < ApplicationController
-    def index
-    end
+  before_filter :is_admin?
+
+  def index
+
+  end
 end

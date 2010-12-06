@@ -91,6 +91,3 @@ DEPENDENCIES
   oauth-plugin (>= 0.4.0.pre1)
   rails (= 3.0.3)
   sqlite3-ruby
-
-METADATA
-  version: 1.0.6
