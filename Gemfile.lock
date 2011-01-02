@@ -36,7 +36,6 @@ GEM
       warden (~> 0.10.7)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    gpgme (1.0.8)
     haml (3.0.24)
     i18n (0.4.2)
     jquery-rails (0.2.5)
@@ -48,9 +47,6 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    oauth (0.4.4)
-    oauth-plugin (0.4.0.pre1)
-      oauth (>= 0.4.4)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -84,10 +80,7 @@ PLATFORMS
 
 DEPENDENCIES
   devise
-  gpgme
   haml
   jquery-rails
-  oauth
-  oauth-plugin (>= 0.4.0.pre1)
   rails (= 3.0.3)
   sqlite3-ruby

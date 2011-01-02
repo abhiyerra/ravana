@@ -8,10 +8,7 @@ gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml'
 gem 'jquery-rails'
-gem 'oauth'
 gem 'devise'
-gem 'gpgme'
-gem "oauth-plugin", ">=0.4.0.pre1"
 
 # Use unicorn as the web server
 # gem 'unicorn'
